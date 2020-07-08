@@ -19,7 +19,7 @@ app.get('/campgrounds', function(req, res) {
   //                         name       : data
   res.render('campgrounds', {campgrounds: campgrounds});
 });
-// process.env.PORT, process.env.IP
-app.listen(3000, function() {
+
+app.listen(process.env.PORT || 3000, process.env.IP, function() {
   console.log('The Yelp camp server has started');
 });
