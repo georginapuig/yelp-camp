@@ -1,6 +1,12 @@
-var express = require('express');
+// npm init 
+// git init
+// hub create
+
+var express = require('express'); // npm install express ejs --save  
+var bodyParser = require('body-parser'); // npm install body-parser --save  
 var app = express();
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 // (route, callback)
@@ -18,6 +24,16 @@ app.get('/campgrounds', function(req, res) {
   ];
   //                         name       : data
   res.render('campgrounds', {campgrounds: campgrounds});
+});
+
+app.post('/campgrounds', function(req, res) {
+  res.send('you hit the post route');
+  // get data from form and add to campgrounds array
+  // redirect back to campgrounds page
+});
+
+app.get('/campgrounds/new', function(req, res) {
+  res.render('new.ejs');
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function() {
