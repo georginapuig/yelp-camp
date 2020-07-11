@@ -18,7 +18,8 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 // schema setup
 const campgroundSchema = new mongoose.Schema({
   name: String,
-  image: String
+  image: String,
+  description: String
 });
 
 // model
