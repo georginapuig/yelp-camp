@@ -5,6 +5,15 @@
 const express = require('express'); // npm install express ejs --save  
 const bodyParser = require('body-parser'); // npm install body-parser --save  
 const app = express();
+const mongoose = require('mongoose');
+
+// mongoose setup
+mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => console.log('Connected to DB!'))
+  .catch(error => console.log(error.message));
 
 const campgrounds = [
   {name: 'Salmon Creek', image: 'https://images.unsplash.com/photo-1506535995048-638aa1b62b77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'},
