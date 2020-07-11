@@ -51,6 +51,7 @@ app.get('/', function(req, res) {
   res.render('landing');
 });
 
+// INDEX - show all campgrounds
 app.get('/campgrounds', function(req, res) {
   // get all campgrounds from db
   Campground.find({}, function(err, allCampgrounds) {
@@ -62,8 +63,9 @@ app.get('/campgrounds', function(req, res) {
   });
 });
 
+// CREATE - add new campground to db
 app.post('/campgrounds', function(req, res) {
-  // get data from form and add to campgrounds array
+  // get data from form
   const name = req.body.name;
   const image = req.body.name;
   const newCampground = {name: name, image: image};
@@ -80,8 +82,16 @@ app.post('/campgrounds', function(req, res) {
   });
 });
 
+// NEW - show form to create new campground
 app.get('/campgrounds/new', function(req, res) {
   res.render('new.ejs');
+});
+
+// SHOW - 
+app.get('/campgrounds/:id', function(req, res) {
+  // find the campground with provided id
+  // render show template with that campground
+  res.send('this will be the show page some day');
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function() {
