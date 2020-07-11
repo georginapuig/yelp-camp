@@ -5,7 +5,7 @@
 const express = require('express'); // npm install express ejs --save  
 const bodyParser = require('body-parser'); // npm install body-parser --save  
 const app = express();
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // npm install mongoose --save  
 
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
@@ -24,27 +24,24 @@ const campgroundSchema = new mongoose.Schema({
 // model
 const Campground = mongoose.model("Campground", campgroundSchema);
 
-Campground.create(
-  {
-    name: 'Salmon Creek', 
-    image: 'https://images.unsplash.com/photo-1506535995048-638aa1b62b77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'
-  }, function(err, campground) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("newly created campground");
-      console.log(campground);
-    }
-  }
-);
+// Campground.create(
+//   {
+//     name: 'Granite Hill', 
+//     image: 'https://images.unsplash.com/photo-1550957886-ac45931e5779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'
+//   }, function(err, campground) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log("newly created campground");
+//       console.log(campground);
+//     }
+//   }
+// );
 
-const campgrounds = [
-  {name: 'Salmon Creek', image: 'https://images.unsplash.com/photo-1506535995048-638aa1b62b77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'},
-  {name: 'Granite Hill', image: 'https://images.unsplash.com/photo-1550957886-ac45931e5779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'},
-  {name: 'Mountain Goat\'s Rest', image: 'https://images.unsplash.com/photo-1506535995048-638aa1b62b77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'},
-  {name: 'Salmon Creek', image: 'https://images.unsplash.com/photo-1578145288677-6e6842916b90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'},
-  {name: 'Salmon Creek', image: 'https://images.unsplash.com/photo-1587077742261-7a49f1f3c0c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'}
-];
+// check db
+// 1. use yelp_camp
+// 2. show collections
+// 3. db.campgrounds.find()
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -55,8 +52,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/campgrounds', function(req, res) {
-  //                         name       : data
-  res.render('campgrounds', {campgrounds: campgrounds});
+  // get all campgrounds from db
+  Campground.find({}, function(err, allCampgrounds) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('campgrounds', {campgrounds: allCampgrounds});
+    }
+  });
 });
 
 app.post('/campgrounds', function(req, res) {
@@ -64,10 +67,17 @@ app.post('/campgrounds', function(req, res) {
   const name = req.body.name;
   const image = req.body.name;
   const newCampground = {name: name, image: image};
-  campgrounds.push(newCampground);
-  // redirect back to campgrounds page
-  // redirect to get by default
-  res.redirect('/campgrounds');
+  // create a new campground and save to db
+  Campground.create(newCampground, function(err, newlyCreated) {
+    if (err) {
+      console.log(err);
+    } else {
+      // redirect back to campgrounds page
+      // redirect to get by default
+      res.redirect('/campgrounds');
+      console.log(newlyCreated);
+    }
+  });
 });
 
 app.get('/campgrounds/new', function(req, res) {
