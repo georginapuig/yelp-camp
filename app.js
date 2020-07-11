@@ -15,6 +15,12 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
   .then(() => console.log('Connected to DB!'))
   .catch(error => console.log(error.message));
 
+// schema setup
+const campgroundSchema = new mongoose.Schema({
+  name: String,
+  image: String
+});
+
 const campgrounds = [
   {name: 'Salmon Creek', image: 'https://images.unsplash.com/photo-1506535995048-638aa1b62b77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'},
   {name: 'Granite Hill', image: 'https://images.unsplash.com/photo-1550957886-ac45931e5779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'},
