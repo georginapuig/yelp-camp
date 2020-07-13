@@ -71,8 +71,9 @@ app.get('/campgrounds', function(req, res) {
 app.post('/campgrounds', function(req, res) {
   // get data from form
   const name = req.body.name;
-  const image = req.body.name;
-  const newCampground = {name: name, image: image};
+  const image = req.body.image;
+  const desc = req.body.description; // input name="description"
+  const newCampground = {name: name, image: image, description: desc};
   // create a new campground and save to db
   Campground.create(newCampground, function(err, newlyCreated) {
     if (err) {
@@ -94,8 +95,15 @@ app.get('/campgrounds/new', function(req, res) {
 // SHOW - 
 app.get('/campgrounds/:id', function(req, res) {
   // find the campground with provided id
-  // render show template with that campground
-  res.render('show');
+  // Campground.findById('id', callback);
+  Campground.findById(req.params.id, function(err, foundCampground) {
+    if (err) {
+      console.log(err);
+    } else {
+      // render show template with that campground
+      res.render('show', {campground: foundCampground});
+    }
+  });
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function() {
