@@ -94,8 +94,15 @@ app.get('/campgrounds/new', function(req, res) {
 // SHOW - 
 app.get('/campgrounds/:id', function(req, res) {
   // find the campground with provided id
-  // render show template with that campground
-  res.render('show');
+  // Campground.findById('id', callback);
+  Campground.findById(req.params.id, function(err, foundCampground) {
+    if (err) {
+      console.log(err);
+    } else {
+      // render show template with that campground
+      res.render('show', {campground: foundCampground});
+    }
+  });
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function() {
