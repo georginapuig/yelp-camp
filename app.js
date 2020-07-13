@@ -2,7 +2,9 @@
 // git init
 // hub create
 
-const express = require('express'); // npm install express ejs --save  
+const express = require('express'); // npm install express ejs --save
+// in order to get access to the post data we have to use body-parser
+// body-parser allows express to read the body and then parse that into a Json object that we can understand  
 const bodyParser = require('body-parser'); // npm install body-parser --save  
 const app = express();
 const mongoose = require('mongoose'); // npm install mongoose --save  
@@ -28,7 +30,8 @@ const Campground = mongoose.model("Campground", campgroundSchema);
 // Campground.create(
 //   {
 //     name: 'Granite Hill', 
-//     image: 'https://images.unsplash.com/photo-1550957886-ac45931e5779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'
+//     image: 'https://images.unsplash.com/photo-1550957886-ac45931e5779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80',
+//     description: 'This is a huge Granite Hill, no bathrooms. No water.'
 //   }, function(err, campground) {
 //     if (err) {
 //       console.log(err);
@@ -49,7 +52,7 @@ app.set('view engine', 'ejs');
 
 // app.get(route, callback)
 app.get('/', function(req, res) {
-  res.render('landing');
+  res.render('home');
 });
 
 // INDEX - show all campgrounds
@@ -59,7 +62,7 @@ app.get('/campgrounds', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render('campgrounds', {campgrounds: allCampgrounds});
+      res.render('index', {campgrounds: allCampgrounds});
     }
   });
 });
@@ -85,14 +88,14 @@ app.post('/campgrounds', function(req, res) {
 
 // NEW - show form to create new campground
 app.get('/campgrounds/new', function(req, res) {
-  res.render('new.ejs');
+  res.render('new');
 });
 
 // SHOW - 
 app.get('/campgrounds/:id', function(req, res) {
   // find the campground with provided id
   // render show template with that campground
-  res.send('this will be the show page some day');
+  res.render('show');
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, function() {
