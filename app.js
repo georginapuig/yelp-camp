@@ -7,7 +7,8 @@ const express = require('express'); // npm install express ejs --save
 // body-parser allows express to read the body and then parse that into a Json object that we can understand  
 const bodyParser = require('body-parser'); // npm install body-parser --save  
 const app = express();
-const mongoose = require('mongoose'); // npm install mongoose --save  
+const mongoose = require('mongoose'); // npm install mongoose --save
+const Campground = require('./models/campground');
 
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
@@ -16,16 +17,6 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 })
   .then(() => console.log('Connected to DB!'))
   .catch(error => console.log(error.message));
-
-// schema setup
-const campgroundSchema = new mongoose.Schema({
-  name: String,
-  image: String,
-  description: String
-});
-
-// model
-const Campground = mongoose.model("Campground", campgroundSchema);
 
 // Campground.create(
 //   {
