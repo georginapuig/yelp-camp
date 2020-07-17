@@ -9,6 +9,7 @@ const bodyParser = require('body-parser'); // npm install body-parser --save
 const app = express();
 const mongoose = require('mongoose'); // npm install mongoose --save
 const Campground = require('./models/campground');
+const seedDB = require('./seeds');
 
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
