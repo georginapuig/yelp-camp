@@ -1,64 +1,68 @@
-# YelpCamp
+<div align="center">
+  <h1>YelpCamp 🌲</h1>
+</div>
+
+## *Development Process*
 
 ## Initial Setup
 
-    Add Landing Page
-    Add Campgrounds Page that lists all campgrounds
+- [x] Add Landing Page
+- [x] Add Campgrounds Page that lists all campgrounds
 
-Each Campground has:
+## Each Campground has:
 
-    Name
-    Image
+- [x] Name
+- [x] Image
 
 ## Layout and Basic Styling
 
-    Create our header and footer partials
-    Add in Bootstrap
+- [x] Create our header and footer partials
+- [x] Add in Bootstrap
 
 ## Creating New Campgrounds
 
-    Setup new campground POST route
-    Add in body-parser
-    Setup route to show form
-    Add basic unstyled form
+- [x] Setup new campground POST route
+- [x] Add in body-parser
+- [x] Setup route to show form
+- [x] Add basic unstyled form
 
 ## Style the campgrounds page
 
-    Add a better header/title
-    Make campgrounds display in a grid
+- [x] Add a better header/title
+- [x] Make campgrounds display in a grid
 
 ## Style the Navbar and Form
 
-    Add a navbar to all templates
-    Style the new campground form
+- [x] Add a navbar to all templates
+- [x] Style the new campground form
 
 ## Add Mongoose
 
-    Install and configure Mongoose
-    Setup campground model
-    Use campground model inside of our routes
+- [x] Install and configure Mongoose
+- [x] Setup campground model
+- [x] Use campground model inside of our routes
 
 ## Show Page
 
-    Review the RESTful routes we've seen so far
-    Add description to our campground model
-    Show db.collection.drop()
-    Add a show route/template
+- [x] Review the RESTful routes we've seen so far
+- [x] Add description to our campground model
+- [x] Show db.collection.drop()
+- [x] Add a show route/template
 
 ## Refactor Mongoose Code
 
-    Create a models directory
-    Use module.exports
-    Require everything correctly!
+- [x] Create a models directory
+- [x] Use module.exports
+- [x] Require everything correctly!
     
 ## Add Seeds File
 
-    Add a seeds.js file
-    Run the seeds file every time the server starts
+- [x] Add a seeds.js file
+- [x] Run the seeds file every time the server starts
 
 ## Add the Comment model!
 
-    Make our errors go away!
+- [x] Make our errors go away!
     Display comments on campground show page
 
 ## Comment New/Create
