@@ -2,7 +2,9 @@
   <h1>🏕️ YelpCamp 🌲</h1>
 </div>
 
-## *Development Process*
+<div align="center">
+  ## *Development Process*
+</div>
 
 ## Initial Setup
 
@@ -63,10 +65,10 @@
 ## Add the Comment model!
 
 - [x] Make our errors go away!
-- [] Display comments on campground show page
+- [ ] Display comments on campground show page
 
 ## Comment New/Create
-- [] Discuss nested routes
-- [] Add the comment new and create routes
-- [] Add the new comment form
+- [ ] Discuss nested routes
+- [ ] Add the comment new and create routes
+- [ ] Add the new comment form
 
