@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  ## *Development Process*
+  <h2>- Development Process -</h2>
 </div>
 
 ## Initial Setup
