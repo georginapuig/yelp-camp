@@ -11,8 +11,6 @@ const mongoose = require('mongoose'); // npm install mongoose --save
 const Campground = require('./models/campground');
 const seedDB = require('./seeds');
 
-seedDB();
-
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
   useNewUrlParser: true,
@@ -28,6 +26,7 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
+seedDB();
 
 // app.get(route, callback)
 app.get('/', function(req, res) {
