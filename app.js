@@ -12,6 +12,7 @@ const Campground = require('./models/campground');
 const seedDB = require('./seeds');
 
 seedDB();
+
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
   useNewUrlParser: true,
@@ -19,21 +20,6 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 })
   .then(() => console.log('Connected to DB!'))
   .catch(error => console.log(error.message));
-
-// Campground.create(
-//   {
-//     name: 'Granite Hill', 
-//     image: 'https://images.unsplash.com/photo-1550957886-ac45931e5779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80',
-//     description: 'This is a huge Granite Hill, no bathrooms. No water.'
-//   }, function(err, campground) {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log("newly created campground");
-//       console.log(campground);
-//     }
-//   }
-// );
 
 // check db
 // 1. use yelp_camp
@@ -89,10 +75,11 @@ app.get('/campgrounds/new', function(req, res) {
 app.get('/campgrounds/:id', function(req, res) {
   // find the campground with provided id
   // Campground.findById('id', callback);
-  Campground.findById(req.params.id, function(err, foundCampground) {
+  Campground.findById(req.params.id).populate('comments').exec(function(err, foundCampground) {
     if (err) {
       console.log(err);
     } else {
+      console.log(foundCampground);
       // render show template with that campground
       res.render('show', {campground: foundCampground});
     }
