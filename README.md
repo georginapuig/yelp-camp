@@ -65,7 +65,7 @@
 ## Add the Comment model
 
 - [x] Make our errors go away
-- [ ] Display comments on campground show page
+- [x] Display comments on campground show page
 
 ## Comment New/Create
 - [ ] Discuss nested routes
