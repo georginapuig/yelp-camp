@@ -80,8 +80,8 @@
 
 ## Finish Styling Show Page
 
-- [ ] Add public directory
-- [ ] Add custom stylesheet
+- [x] Add public directory
+- [x] Add custom stylesheet
 
 ## Auth Pt. 1 - Add User Model
 
