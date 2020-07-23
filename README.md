@@ -68,14 +68,15 @@
 - [x] Display comments on campground show page
 
 ## Comment New/Create
+
 - [x] Discuss nested routes
 - [x] Add the comment new and create routes
 - [x] Add the new comment form
 
 ## Style Show Page
 
-- [ ] Add sidebar to show page
-- [ ] Display comments nicely
+- [x] Add sidebar to show page
+- [x] Display comments nicely
 
 ## Finish Styling Show Page
 
