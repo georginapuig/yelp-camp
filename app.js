@@ -15,6 +15,19 @@ const Comment    = require('./models/comment');
 const User    = require('./models/user');
 const seedDB     = require('./seeds');
 
+//  passport config
+app.use(require("express-session")({
+  secret: "Rusty is the best and cutest dog in the world",
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
   useNewUrlParser: true,
