@@ -2,6 +2,7 @@
 // git init
 // hub create
 
+const PORT = 3300;
 const express    = require('express'); // npm install express ejs --save
 // in order to get access to the post data we have to use body-parser
 // body-parser allows express to read the body and then parse that into a Json object that we can understand  
@@ -193,6 +194,6 @@ app.get('/logout', function(req, res) {
   res.redirect('/campgrounds');
 });
 
-app.listen(process.env.PORT || 3300, process.env.IP, function() {
-  console.log('The Yelp camp server has started');
+app.listen(process.env.PORT || PORT, process.env.IP, function() {
+  console.log('The Yelp camp server has started in port ' + PORT);
 });
