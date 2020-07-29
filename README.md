@@ -91,8 +91,8 @@
 ## Auth Pt. 2 - Register
 
 - [x] Cconfigure Passport
-- [ ] Add register routes
-- [ ] Add register template
+- [x] Add register routes
+- [x] Add register template
 
 ## Auth Pt. 3 - Login
 
