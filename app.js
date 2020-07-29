@@ -48,7 +48,6 @@ app.get('/campgrounds', function(req, res) {
   });
 });
 
-
 // NEW - show form to create new campground
 app.get('/campgrounds/new', function(req, res) {
   res.render('campgrounds/new');
