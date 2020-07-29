@@ -97,7 +97,7 @@
 ## Auth Pt. 3 - Login
 
 - [ ] Add login routes
-- [ ] Add login template
+- [x] Add login template
 
 ## Auth Pt. 4 - Logout/Navbar
 
