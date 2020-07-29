@@ -85,7 +85,7 @@
 
 ## Auth Pt. 1 - Add User Model
 
-- [ ] Install all packages needed for auth
+- [x] Install all packages needed for auth
 - [ ] Define User model
 
 ## Auth Pt. 2 - Register
