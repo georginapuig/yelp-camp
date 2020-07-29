@@ -187,6 +187,12 @@ app.post('/login', passport.authenticate('local',
   }), function(req, res) {
 });
 
+// LOGOUT ROUTE
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/campgrounds');
+});
+
 app.listen(process.env.PORT || 3300, process.env.IP, function() {
   console.log('The Yelp camp server has started');
 });

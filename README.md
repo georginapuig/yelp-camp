@@ -101,7 +101,7 @@
 
 ## Auth Pt. 4 - Logout/Navbar
 
-- [ ] Add logout route
+- [x] Add logout route
 - [ ] Prevent user from adding a comment if not signed in
 - [ ] Add links to navbar
 
