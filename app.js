@@ -29,6 +29,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req, res, next) {
+  // add req.user to all templates
+  res.locals.currentUser = req.user;
+  next();
+});
+
 // mongoose setup
 mongoose.connect('mongodb://localhost:27017/yelp_camp', {
   useNewUrlParser: true,
