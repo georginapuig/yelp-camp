@@ -55,12 +55,13 @@ app.get('/', function(req, res) {
 
 // INDEX - show all campgrounds
 app.get('/campgrounds', function(req, res) {
+  console.log(req.user);
   // get all campgrounds from db
   Campground.find({}, function(err, allCampgrounds) {
     if (err) {
       console.log(err);
     } else {
-      res.render('campgrounds/index', {campgrounds: allCampgrounds});
+      res.render('campgrounds/index', {campgrounds: allCampgrounds, currentUser: req.user});
     }
   });
 });

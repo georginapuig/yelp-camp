@@ -107,7 +107,7 @@
 
 ## Auth Pt. 5 - Show/Hide Links
 
-- [ ] Show/hide auth links in navbar
+- [x] Show/hide auth links in navbar
 
 ## Refactor The Routes
 
