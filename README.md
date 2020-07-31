@@ -123,3 +123,10 @@
 - [x] Prevent an unauthenticated user from creating a campground
 - [x] Save username + id to newly created campground
 
+## Editing Campgrounds
+
+- [ ] Add method override
+- [ ] Add edit route for campgrounds
+- [ ] Add link to edit page
+- [ ] Add update route
+- [ ] Fix $set problem
