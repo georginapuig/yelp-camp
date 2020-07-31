@@ -116,7 +116,7 @@
 ## Users + Comments
 
 - [x] Associate users and comments
-- [ ] Save author's name to a comment automatically
+- [x] Save author's name to a comment automatically
 
 ## Users + Campgrounds
 
