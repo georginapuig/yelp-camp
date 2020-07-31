@@ -60,6 +60,10 @@ router.get('/:id', function(req, res) {
   });
 });
 
+//  EDIT CAMPGROUND
+
+// UPDATE CAMPGROUND ROUTE
+
 // MIDDLEWARE
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {

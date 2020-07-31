@@ -11,6 +11,7 @@ const app        = express();
 const mongoose   = require('mongoose'); // npm install mongoose --save
 const passport    = require("passport");
 const LocalStrategy = require("passport-local");
+const methodOverride = require('method-override');
 // models
 const Campground = require('./models/campground');
 const Comment    = require('./models/comment');
@@ -21,6 +22,13 @@ const seedDB     = require('./seeds');
 const commentRoutes = require('./routes/comments');
 const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'));
+console.log(__dirname); // /home/georgina/code/georginapuig/yelp-camp
+seedDB();
 
 //  passport config
 app.use(require("express-session")({
@@ -53,12 +61,6 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 // 1. use yelp_camp
 // 2. show collections
 // 3. db.campgrounds.find()
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
-console.log(__dirname); // /home/georgina/code/georginapuig/yelp-camp
-seedDB();
 
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
