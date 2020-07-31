@@ -9,10 +9,6 @@ router.get('/', function(req, res) {
   res.render('home');
 });
 
-// ============
-// AUTH ROUTES
-// ============
-
 // SIGN UP ROUTES
 
 // show register form
@@ -23,7 +19,7 @@ router.get('/register', function(req, res) {
 // handling sign up logic
 router.post('/register', function(req, res) {
   const newUser = new User({username: req.body.username});
-  
+
   User.register(newUser, req.body.password, function(err, user) {
     if (err) {
       console.log(err);

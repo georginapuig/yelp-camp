@@ -111,11 +111,11 @@
 
 ## Refactor The Routes
 
-- [ ] Use Express router to reoragnize all routes
+- [x] Use Express router to reoragnize all routes
 
 ## Users + Comments
 
-- [ ] Associate users and comments
+- [x] Associate users and comments
 - [ ] Save author's name to a comment automatically
 
 ## Users + Campgrounds
