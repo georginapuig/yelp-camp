@@ -89,10 +89,10 @@ router.delete('/:id', function(req, res) {
   // destroy blog
   Campground.findByIdAndRemove(req.params.id, function(err) {
     if (err) {
-      res.redirect('/campground');
+      res.redirect('/campgrounds');
     } else {
       // redirect somewhere
-      res.redirect('/campground');
+      res.redirect('/campgrounds');
     }
   });
   // res.send('you have reached the destroy route');

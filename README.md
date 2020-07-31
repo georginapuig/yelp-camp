@@ -133,7 +133,7 @@
 ## Deleting Campgrounds
 
 - [x] Add destroy route
-- [ ] Add delete button
+- [x] Add delete button
 
 ## Authorization
 
