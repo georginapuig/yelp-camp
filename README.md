@@ -127,7 +127,7 @@
 
 - [x] Add method override
 - [x] Add edit route for campgrounds
-- [ ] Add link to edit page
+- [x] Add link to edit page
 - [x] Add update route
 - [ ] Fix $set problem
 
