@@ -84,6 +84,19 @@ router.put("/:id", function(req, res){
   });
 });
 
+// DELETE CAMPGROUND ROUTE
+router.delete('/:id', function(req, res) {
+  // destroy blog
+  Campground.findByIdAndRemove(req.params.id, function(err) {
+    if (err) {
+      res.redirect('/campground');
+    } else {
+      // redirect somewhere
+      res.redirect('/campground');
+    }
+  });
+  // res.send('you have reached the destroy route');
+});
 
 // MIDDLEWARE
 function isLoggedIn(req, res, next) {

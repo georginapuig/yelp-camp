@@ -129,12 +129,10 @@
 - [x] Add edit route for campgrounds
 - [x] Add link to edit page
 - [x] Add update route
-- [ ] Fix $set problem
-
 
 ## Deleting Campgrounds
 
-- [ ] Add destroy route
+- [x] Add destroy route
 - [ ] Add delete button
 
 ## Authorization
