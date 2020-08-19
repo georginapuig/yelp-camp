@@ -139,4 +139,4 @@
 
 - [x] User can only edit his/her campgrounds
 - [x] User can only delete his/her campgrounds
-- [ ] Hide/Show edit and delete buttons
+- [x] Hide/Show edit and delete buttons
