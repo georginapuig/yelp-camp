@@ -138,5 +138,5 @@
 ## Authorization (permission)
 
 - [x] User can only edit his/her campgrounds
-- [ ] User can only delete his/her campgrounds
+- [x] User can only delete his/her campgrounds
 - [ ] Hide/Show edit and delete buttons

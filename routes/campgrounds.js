@@ -26,7 +26,7 @@ router.post('/', isLoggedIn, function(req, res) {
   // get data from form
   const name = req.body.name;
   const image = req.body.image;
-  const desc = req.body.description; // input name="description"
+  const desc = req.body.description; // input name='description'
   const author = {
     id: req.user._id,
     username: req.user.username
@@ -63,19 +63,19 @@ router.get('/:id', function(req, res) {
 //  EDIT CAMPGROUND
 router.get('/:id/edit', checkCampgroundOwnership, function(req, res) {
   Campground.findById(req.params.id, function(err, foundCampground){
-    res.render("campgrounds/edit", {campground: foundCampground});
+    res.render('campgrounds/edit', {campground: foundCampground});
   });
 });
 
 // UPDATE CAMPGROUND ROUTE
-router.put("/:id", checkCampgroundOwnership, function(req, res){
+router.put('/:id', checkCampgroundOwnership, function(req, res){
   // find and update the correct campground
   Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
      if(err){
-         res.redirect("/campgrounds");
+         res.redirect('/campgrounds');
      } else {
          //redirect somewhere(show page)
-         res.redirect("/campgrounds/" + req.params.id);
+         res.redirect('/campgrounds/' + req.params.id);
      }
   });
 });
