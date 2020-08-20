@@ -144,6 +144,7 @@
 ## Editing comments
 
 - [x] Add edit route for comments
+- [x] Add edit template
 - [x] Add edit button
 - [ ] Add update route
 

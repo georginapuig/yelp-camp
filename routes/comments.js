@@ -50,7 +50,7 @@ router.post('/', isLoggedIn, function(req, res) {
 
 // EDIT
 router.get('/:comment_id/edit', function(req, res) {
-  res.send('edit route');
+  res.render('comments/edit');
 });
 
 // MIDDLEWARE
