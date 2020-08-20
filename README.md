@@ -143,7 +143,7 @@
 
 ## Editing comments
 
-- [ ] Add edit route for comments
+- [x] Add edit route for comments
 - [x] Add edit button
 - [ ] Add update route
 
