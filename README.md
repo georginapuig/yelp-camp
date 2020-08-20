@@ -140,3 +140,13 @@
 - [x] User can only edit his/her campgrounds
 - [x] User can only delete his/her campgrounds
 - [x] Hide/Show edit and delete buttons
+
+## Editing comments
+
+- [ ] Add edit route for comments
+- [x] Add edit button
+- [ ] Add update route
+
+## Deleting comments
+
+- [ ] Add destroy route
