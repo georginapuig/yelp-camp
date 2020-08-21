@@ -151,3 +151,4 @@
 ## Deleting comments
 
 - [ ] Add destroy route
+- [ ] Add delete button
