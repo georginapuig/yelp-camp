@@ -71,7 +71,7 @@ router.put("/:comment_id", function(req, res){
 });
 
 // DESTROY
-router.delete("/:comment_id", function(req, res){
+router.delete("/:comment_id", checkCommentOwnership, function(req, res){
   //findByIdAndRemove
   Comment.findByIdAndRemove(req.params.comment_id, function(err){
      if(err){

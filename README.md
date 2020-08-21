@@ -156,6 +156,6 @@
 ## Authorization part 2: Comments
 
 - [x] User can only edit his/her comments
-- [ ] User can only delete his/her comments
+- [x] User can only delete his/her comments
 - [ ] Hide/Show edit and delete buttons
 - [ ] Refactor middleware
