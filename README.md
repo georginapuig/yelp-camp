@@ -164,4 +164,4 @@
 
 - [x] Demo working version
 - [x] Install and configure connect-flash
-- [ ] Add bootstrap alerts to header
+- [x] Add bootstrap alerts to header
