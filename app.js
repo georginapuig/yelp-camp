@@ -6,8 +6,9 @@ const PORT = 3300;
 const express    = require('express'); // npm install express ejs --save
 // in order to get access to the post data we have to use body-parser
 // body-parser allows express to read the body and then parse that into a Json object that we can understand  
-const bodyParser = require('body-parser'); // npm install body-parser --save  
 const app        = express();
+const bodyParser = require('body-parser'); // npm install body-parser --save  
+const flash = require('connect-flash'); // npm install --save connect-flash
 const mongoose   = require('mongoose'); // npm install mongoose --save
 const passport    = require("passport");
 const LocalStrategy = require("passport-local");
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
+app.use(flash());
 console.log(__dirname); // /home/georgina/code/georginapuig/yelp-camp
 seedDB();
 

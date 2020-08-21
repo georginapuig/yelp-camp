@@ -159,3 +159,9 @@
 - [x] User can only delete his/her comments
 - [x] Hide/Show edit and delete buttons
 - [x] Refactor middleware
+
+## Adding in flash
+
+- [x] Demo working version
+- [x] Install and configure connect-flash
+- [ ] Add bootstrap alerts to header
