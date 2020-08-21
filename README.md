@@ -150,5 +150,5 @@
 
 ## Deleting comments
 
-- [ ] Add destroy route
-- [ ] Add delete button
+- [x] Add destroy route
+- [x] Add delete button

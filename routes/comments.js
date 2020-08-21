@@ -82,7 +82,6 @@ router.delete("/:comment_id", function(req, res){
   });
 });
 
-
 // MIDDLEWARE
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
