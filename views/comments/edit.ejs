@@ -2,10 +2,10 @@
 
 <div class="container">
   <div class="row">
-    <h1 class="text-center">Edit <%= campground.name %> </h1>
+    <h1 class="text-center">Edit comment</h1>
   
     <div style="width: 30%; margin: 25px auto;">
-      <form action="/campgrounds/<%= campground._id %>/comments/<%= comment.id %>?_method=PUT" method="POST">
+      <form action="/campgrounds/<%= campground_id %>/comments/<%= comment.id %>?_method=PUT" method="POST">
         <div class="form-group">
           <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %> ">
         </div>
