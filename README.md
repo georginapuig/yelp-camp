@@ -158,4 +158,4 @@
 - [x] User can only edit his/her comments
 - [x] User can only delete his/her comments
 - [x] Hide/Show edit and delete buttons
-- [ ] Refactor middleware
+- [x] Refactor middleware
