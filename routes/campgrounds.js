@@ -26,13 +26,14 @@ router.get('/new', middleware.isLoggedIn, function(req, res) {
 router.post('/', middleware.isLoggedIn, function(req, res) {
   // get data from form
   const name = req.body.name;
+  const price = req.body.price;
   const image = req.body.image;
   const desc = req.body.description; // input name='description'
   const author = {
     id: req.user._id,
     username: req.user.username
   };
-  const newCampground = {name: name, image: image, description: desc, author: author};
+  const newCampground = { name: name, price: price, image: image, description: desc, author: author };
   // create a new campground and save to db
   Campground.create(newCampground, function(err, newlyCreated) {
     if (err) {
