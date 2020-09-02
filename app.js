@@ -53,8 +53,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+console.log(process.env.DATABASEURL); // mongodb://localhost:27017/yelp_camp
+
 // mongoose setup
-mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+// mongoose.connect('mongodb+srv://georgina:<password>@cluster0.vkaw5.mongodb.net/<dbname>?retryWrites=true&w=majority''
+mongoose.connect(process.env.DATABASEURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -71,5 +74,5 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT || PORT, process.env.IP, function() {
-  console.log('The Yelp camp server has started in port ' + PORT);
+  console.log(`The Yelp camp server has started in port ${PORT}`);
 });
