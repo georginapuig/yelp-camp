@@ -24,6 +24,8 @@ const commentRoutes = require('./routes/comments');
 const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
+const url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp';
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -56,8 +58,7 @@ app.use(function(req, res, next) {
 console.log(process.env.DATABASEURL); // mongodb://localhost:27017/yelp_camp
 
 // mongoose setup
-// mongoose.connect('mongodb+srv://georgina:<password>@cluster0.vkaw5.mongodb.net/<dbname>?retryWrites=true&w=majority''
-mongoose.connect(process.env.DATABASEURL, {
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
